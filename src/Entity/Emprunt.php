@@ -20,6 +20,14 @@ class Emprunt
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date_retour = null;
 
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Etudiant $etudiant = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Livre $livre = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -45,6 +53,30 @@ class Emprunt
     public function setDateRetour(\DateTimeInterface $date_retour): static
     {
         $this->date_retour = $date_retour;
+
+        return $this;
+    }
+
+    public function getEtudiant(): ?Etudiant
+    {
+        return $this->etudiant;
+    }
+
+    public function setEtudiant(?Etudiant $etudiant): static
+    {
+        $this->etudiant = $etudiant;
+
+        return $this;
+    }
+
+    public function getLivre(): ?Livre
+    {
+        return $this->livre;
+    }
+
+    public function setLivre(?Livre $livre): static
+    {
+        $this->livre = $livre;
 
         return $this;
     }
