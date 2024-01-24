@@ -19,13 +19,12 @@ class EmpruntType extends AbstractType
             ->add('date_retour')
             ->add('etudiant', EntityType::class, [
                 'class' => Etudiant::class,
-'choice_label' => 'id',
+                'choice_label' => 'nom',
             ])
             ->add('livre', EntityType::class, [
                 'class' => Livre::class,
-'choice_label' => 'id',
-            ])
-        ;
+                'choice_label' => 'titre',
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

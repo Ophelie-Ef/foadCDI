@@ -23,9 +23,8 @@ class LivreType extends AbstractType
             ->add('resume')
             ->add('genre', EntityType::class, [
                 'class' => Genre::class,
-'choice_label' => 'id',
-            ])
-        ;
+                'choice_label' => 'nom',
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
