@@ -20,19 +20,21 @@
 
 			<nav id="headerNav">
 
-				<ul id="navMenu"></ul>
+				<div id="logo">
+					<p>C.D.I.</p>
+				</div>
 
 				{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
 					<div id="logger">
-						<a href="{{path('app_logout')}}">Se Déconnecter</a>
+						<a href="{{path('app_logout')}}" id="deco" class="logBtn">Se Déconnecter</a>
 					</div>
 
 				{% else %}
 
 					<div id="logger">
-						<a href="{{path('app_register')}}">S'Inscrire</a>
-						<a href="{{path('app_login')}}">Se Connecter</a>
+						<a href="{{path('app_register')}}" id="inscr" class="logBtn">S'Inscrire</a>
+						<a href="{{path('app_login')}}" id="connect" class="logBtn">Se Connecter</a>
 					</div>
 
 				{% endif %}
